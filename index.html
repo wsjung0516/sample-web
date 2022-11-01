@@ -261,12 +261,18 @@
               Feedback
             </h2>
             <p class="leading-relaxed mb-5 text-gray-600">
-              Post-ironic portland shabby chic echo park, banjo fashion axe
+              If you leave a message, I will response to you
             </p>
             <div class="relative mb-4">
-              <label for="email" class="leading-7 text-sm text-gray-600"
-                >Email</label
-              >
+              <form class="contact_form" action="#">
+                <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              />
+              <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
               <input
                 type="email"
                 id="email"
@@ -275,23 +281,22 @@
               />
             </div>
             <div class="relative mb-4">
-              <label for="message" class="leading-7 text-sm text-gray-600"
-                >Message</label
-              >
+              <label for="message" class="leading-7 text-sm text-gray-600">Message</label>
               <textarea
                 id="message"
                 name="message"
                 class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
-              ></textarea>
-            </div>
-            <button
-              class="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
-            >
-              Button
-            </button>
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="text-white bg-green-700 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+                Button
+              </button>
+
+            </form>
             <p class="text-xs text-gray-500 mt-3">
-              Chicharrones blog helvetica normcore iceland tousled brook viral
-              artisan.
+            
             </p>
           </div>
         </div>
@@ -617,9 +622,33 @@
           <span>© 2021 Copyright:</span>
           <a class="text-gray-600 font-semibold" href="https://computerstechpro.com/">Compoterstechpro</a>
         </div>
-      </footer>    </div>
+      </footer>
+    </div>
   </body>
   <!-- Header  -->
   <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+  <!-- stmp -->
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
   <script src="src/app.js"></script>
+  <script>
+    const form = document.querySelector('.contact_form');
+    function sendMsg(e) {
+      console.log('message', e);
+      const name = document.querySelector('#name'),
+            email = document.querySelector('#email'),
+            message = document.querySelector('#message');
+            Email.send({
+                SecureToken : "9f0ad52c-ee22-45b7-b703-8427bc0e75fb",
+                To : 'wonsup.jung@gmail.com',
+                From : email.value,
+                Subject : "This is the subject",
+                Body : name.value + ':' + message.value
+            }).then(
+              message => alert(message)
+            );
+
+    }
+    form.addEventListener('submit',sendMsg);
+
+  </script>
 </html>
