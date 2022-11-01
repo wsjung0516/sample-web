@@ -26,6 +26,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css"
     />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
     <!--  -->
@@ -291,7 +292,7 @@
               <button
                 type="submit"
                 class="text-white bg-green-700 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-                Button
+                Leave Message
               </button>
 
             </form>
@@ -629,7 +630,6 @@
   <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
   <!-- stmp -->
   <script src="https://smtpjs.com/v3/smtp.js"></script>
-  <script src="src/app.js"></script>
   <script>
     const form = document.querySelector('.contact_form');
     function sendMsg(e) {
@@ -642,7 +642,7 @@
                 To : 'wonsup.jung@gmail.com',
                 From : email.value,
                 Subject : "This is the subject",
-                Body : name.value + ':' + message.value
+                Body : name.value + ':' + '\n' + message.value
             }).then(
               message => alert(message)
             );
