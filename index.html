@@ -26,7 +26,6 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css"
     />
-    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
     <!--  -->
@@ -626,7 +625,7 @@
       </footer>
     </div>
   </body>
-  <!-- Header  -->
+  <!--   -->
   <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
   <!-- stmp -->
   <script src="https://smtpjs.com/v3/smtp.js"></script>
@@ -635,20 +634,20 @@
     function sendMsg(e) {
       console.log('message', e);
       const name = document.querySelector('#name'),
-            email = document.querySelector('#email'),
-            message = document.querySelector('#message');
-            Email.send({
-                SecureToken : "9f0ad52c-ee22-45b7-b703-8427bc0e75fb",
-                To : 'wonsup.jung@gmail.com',
-                From : email.value,
-                Subject : "This is the subject",
-                Body : name.value + ':' + '\n' + message.value
-            }).then(
-              message => alert(message)
-            );
-
-    }
-    form.addEventListener('submit',sendMsg);
-
-  </script>
+      email = document.querySelector('#email'),
+      message = document.querySelector('#message');
+      Email.send({
+        SecureToken : "9f0ad52c-ee22-45b7-b703-8427bc0e75fb",
+        To : 'wonsup.jung@gmail.com',
+        From : email.value,
+        Subject : "This is the subject",
+        Body : name.value + ':' + '\n' + message.value
+      }).then(
+        message => alert(message)
+        );
+        
+      }
+      form.addEventListener('submit',sendMsg);
+      
+      </script>
 </html>
