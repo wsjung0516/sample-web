@@ -598,15 +598,16 @@
       email = document.querySelector('#email'),
       message = document.querySelector('#message');
       console.log('message', name.value, email.value, message.value);
-      // Password: "akmoffolylybainb",
-      // // SecureToken : "d181694b-42ab-4247-ae99-f5677f6e47ec",
+      // Password: "E570B124ECE70B06FC3B37BF93D0C8C9B5D0", //smtpjs wonsup.jung.aws@gmail.com
       
+      // SecureToken : "d181694b-42ab-4247-ae99-f5677f6e47ec",
       Email.send({
+        SecureToken : "9f0ad52c-ee22-45b7-b703-8427bc0e75fb", // old version Nov 1
         Host: "smtp.elasticemail.com",
-        Username: "wonsup.jung@gmail.com",
-        Password: "ACF350B118EB7DD5D736EF7F3F15784E98DB",
+        Username: "wonsup.jung.aws@gmail.com",
+        Password: "E570B124ECE70B06FC3B37BF93D0C8C9B5D0",
         To : 'wonsup.jung@gmail.com',
-        From : 'wonsup.jung@gmail.com',
+        From : 'wonsup.jung.aws@gmail.com',
         Subject : "This is the feedback from homepage",
         Body : 'name:' + name.value + ':' + '<br/> email' +':'+ email.value + '<br/> message' + ':' + message.value
       }).then(
