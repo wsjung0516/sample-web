@@ -289,7 +289,7 @@
                 class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
                 ></textarea>
               </div>
-              <button
+              <button 
                 type="submit"
                 class="text-white bg-green-700 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
                 Leave Message
@@ -594,27 +594,28 @@
   <script>
     const form = document.querySelector('.contact_form');
     function sendMsg(e) {
-      console.log('message', e);
       const name = document.querySelector('#name'),
       email = document.querySelector('#email'),
       message = document.querySelector('#message');
+      console.log('message', name.value, email.value, message.value);
       // Password: "akmoffolylybainb",
-      // SecureToken : "d181694b-42ab-4247-ae99-f5677f6e47ec",
+      // // SecureToken : "d181694b-42ab-4247-ae99-f5677f6e47ec",
       Email.send({
         Host: "smtp.elasticemail.com",
         Username: "wonsup.jung@gmail.com",
         Password: "ACF350B118EB7DD5D736EF7F3F15784E98DB",
-        // Password: "akmoffolylybainb",
         To : 'wonsup.jung@gmail.com',
-        From : email.value,
+        From : 'wonsup.jung@gmail.com',
+        // From : email.value,
         Subject : "This is the feedback from homepage",
-        Body : 'name:' + name.value + ':' + '<br/> email' + email.value + '<br/> message' + message.value
+        Body : 'name:' + name.value + ':' + '<br/> email' +':'+ email.value + '<br/> message' + ':' + message.value
       }).then(
         message => alert(message)
       );
-        
-      }
+      alert('test');
+    }
       form.addEventListener('submit',sendMsg);
+    
       
       </script>
   <script src="https://cdn.tailwindcss.com"></script>
