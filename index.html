@@ -63,7 +63,7 @@
             <a class="mr-5 hover:text-gray-900 text-xl">Product</a>
             <a class="mr-5 hover:text-gray-900 text-xl">Working</a>
           </nav>
-          <button
+          <button type="button"
             class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"
             id="myBtn"
           >
@@ -290,7 +290,7 @@
                 ></textarea>
               </div>
               <button 
-                type="submit"
+                type="button" onclick="sendMsg()"
                 class="text-white bg-green-700 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
                 Leave Message
               </button>
@@ -600,6 +600,7 @@
       console.log('message', name.value, email.value, message.value);
       // Password: "akmoffolylybainb",
       // // SecureToken : "d181694b-42ab-4247-ae99-f5677f6e47ec",
+      
       Email.send({
         Host: "smtp.elasticemail.com",
         Username: "wonsup.jung@gmail.com",
@@ -610,13 +611,15 @@
         Subject : "This is the feedback from homepage",
         Body : 'name:' + name.value + ':' + '<br/> email' +':'+ email.value + '<br/> message' + ':' + message.value
       }).then(
-        message => alert(message)
+        (msg) => {
+          alert(msg);
+          name.value = '';
+          email.value = '';
+          message.value = '';
+        }
       );
-      alert('test');
     }
-      form.addEventListener('submit',sendMsg);
-    
       
-      </script>
+    </script>
   <script src="https://cdn.tailwindcss.com"></script>
 </html>
