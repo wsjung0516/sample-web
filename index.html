@@ -599,11 +599,11 @@
       email = document.querySelector('#email'),
       message = document.querySelector('#message');
       // Password: "akmoffolylybainb",
-      // Host: "smtp.gmail.com",
-      // Username: "wonsup.jung@gmail.com",
-      // Password: "akmoffolylybainb",
+      // SecureToken : "d181694b-42ab-4247-ae99-f5677f6e47ec",
       Email.send({
-        SecureToken : "d181694b-42ab-4247-ae99-f5677f6e47ec",
+        Host: "smtp.gmail.com",
+        Username: "wonsup.jung@gmail.com",
+        Password: "akmoffolylybainb",
         To : 'wonsup.jung@gmail.com',
         From : email.value,
         Subject : "This is the feedback from homepage",
