@@ -598,19 +598,19 @@
       const name = document.querySelector('#name'),
       email = document.querySelector('#email'),
       message = document.querySelector('#message');
-      SecureToken : "cb1d54f9-7271-4d31-a92f-2698aa224ef7",
+      // Password: "akmoffolylybainb",
+      // Host: "smtp.gmail.com",
+      // Username: "wonsup.jung@gmail.com",
       // Password: "akmoffolylybainb",
       Email.send({
-        Host: "smtp.gmail.com",
-        Username: "wonsup.jung@gmail.com",
-        Password: "wsij@0516",
+        SecureToken : "d181694b-42ab-4247-ae99-f5677f6e47ec",
         To : 'wonsup.jung@gmail.com',
         From : email.value,
         Subject : "This is the feedback from homepage",
         Body : 'name:' + name.value + ':' + '<br/> email' + email.value + '<br/> message' + message.value
       }).then(
         message => alert(message)
-        );
+      );
         
       }
       form.addEventListener('submit',sendMsg);
