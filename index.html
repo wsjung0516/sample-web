@@ -598,11 +598,11 @@
       const name = document.querySelector('#name'),
       email = document.querySelector('#email'),
       message = document.querySelector('#message');
-      // Host: "smtp.gmail.com",
-      // Username: "wonsup.jung@gmail.com",
-      // Password: "akmoffolylybainb",
+      SecureToken : "cb1d54f9-7271-4d31-a92f-2698aa224ef7",
       Email.send({
-        SecureToken : "cb1d54f9-7271-4d31-a92f-2698aa224ef7",
+        Host: "smtp.gmail.com",
+        Username: "wonsup.jung@gmail.com",
+        Password: "akmoffolylybainb",
         To : 'wonsup.jung@gmail.com',
         From : email.value,
         Subject : "This is the feedback from homepage",
